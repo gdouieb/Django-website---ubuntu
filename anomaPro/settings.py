@@ -59,7 +59,7 @@ ROOT_URLCONF = 'anomaPro.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
+#TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
 WSGI_APPLICATION = 'anomaPro.wsgi.application'
 
 
@@ -122,21 +122,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # For DEVELOPMENT :
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'/static/')]
-STATICFILES_DIRS = [BASE_DIR + '/static/']
-print("BASE_DIR = " + BASE_DIR)
-print("STATICFILES_DIRS :")
-print(STATICFILES_DIRS)
+#STATICFILES_DIRS = [os.path.join(BASE_DIR,'/static/')]
+#STATICFILES_DIRS = [BASE_DIR + '/static/']
+#print("BASE_DIR = " + BASE_DIR)
+#print("STATICFILES_DIRS :")
+#print(STATICFILES_DIRS)
 
 
 
 # for PRODUCTION : 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-print(f"STATIC URL = {STATIC_URL}")
-print(f"STATIC ROOT = {STATIC_ROOT}")
+#print(f"STATIC URL = {STATIC_URL}")
+#print(f"STATIC ROOT = {STATIC_ROOT}")
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
